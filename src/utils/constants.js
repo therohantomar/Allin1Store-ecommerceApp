@@ -1,0 +1,1 @@
+export const PRODUCTS_LINKS="https://fakestoreapi.com/products"
