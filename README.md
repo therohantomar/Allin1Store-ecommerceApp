@@ -28,7 +28,7 @@ Allin1 is a modern and sleek ecommerce app built using React and Vite. It levera
 1. Clone the repository: `git clone <repository-url>`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
-4. Open your browser and visit `http://localhost:3000` to access Allin1 Ecommerce App.
+4. Open your browser and visit `  http://localhost:5173/` to access Allin1 Ecommerce App.
 
 ## 🤝 Contributing
 
