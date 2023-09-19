@@ -3,6 +3,8 @@ import { PRODUCTS_LINKS } from "../constants";
 
 function useProducts(){
     const [AllProducts,setAllProducts]=useState([])
+    const [FilteredProducts,setFilteredProducts]=useState([])
+
 
     useEffect(()=>{
         getproducts()
@@ -12,9 +14,10 @@ function useProducts(){
         const data=await fetch(PRODUCTS_LINKS)
         const products=await data.json()
         setAllProducts(products)
+        setFilteredProducts(products)
       }
 
-      return AllProducts
+      return {FilteredProducts, setFilteredProducts,AllProducts}
 
 }
 
