@@ -1,16 +1,17 @@
 import { BsSearch } from "react-icons/bs";
-import FilterList from "./FilterList";
+
 import ProductCard from "./ProductCard";
 import useProducts from "../utils/hooks/useProducts";
 import ProductCardShimmer from "./ProductCardShimmer";
 import { useState } from "react";
-import {filterSearch} from "../utils/helper"
+import { filterSearch } from "../utils/helper";
 
 function Home() {
-  const { FilteredProducts, setFilteredProducts, AllProducts } = useProducts();
-  const [searchKey, setSearchKey] = useState(" ");
+  const { FilteredProducts, setFilteredProducts, AllProducts, Categories } =useProducts();
+  const [searchKey, setSearchKey] = useState("");
+  const [Category, setCategory] = useState("All");
 
- 
+
 
   //early return
   if (AllProducts.length === 0) {
@@ -29,23 +30,78 @@ function Home() {
         <input
           type="text"
           value={searchKey}
+          placeholder="Search Product"
           onChange={(e) => setSearchKey(e.target.value)}
-          onKeyDown={(e)=>{
-            if(e.code==="Enter"){
-             return filterSearch(searchKey,FilteredProducts,setFilteredProducts,AllProducts)
+          onKeyDown={(e) => {
+            if (e.code === "Enter") {
+              return filterSearch(
+                searchKey,
+                FilteredProducts,
+                setFilteredProducts,
+                AllProducts
+              );
             }
           }}
-          placeholder="Search Product...."
           className="w-96 px-2 outline-none h-8 border-2 rounded-tl-sm rounded-bl-sm"
         />
         <button
-          onClick={() => filterSearch(searchKey,FilteredProducts,setFilteredProducts,AllProducts)}
+          onClick={() =>filterSearch(searchKey,FilteredProducts,setFilteredProducts,AllProducts)}
           className="p-2 h-8 bg-black"
         >
           <BsSearch className="text-white " />
         </button>
       </span>
-      <FilterList />
+      <span className="flex items-center gap-2">
+        {" "}
+        {Categories.length === 0 ? (
+          <h1>loading....</h1>
+        ) : (
+          Categories?.map((category, index) => (
+            <div key={index} className="flex items-center my-4 ">
+              {Category === category ? (
+                <input
+                  type="radio"
+                  value={category}
+                  className="checkbox mx-2 appearance-none  focus:opacity-100 ring-2  ring-gray-600 focus:ring-4 focus:bg-black focus:ring-offset-2 focus:ring-black focus:outline-black w-2 h-2   outline-black  border-gray-800  cursor-pointer checked:ring-black checked:ring-4 checked:outline-black checked:ring-offset-2 checked:bg-black  "
+                  name="category"
+                  onFocus={() => setCategory(category)}
+                  onClick={() => {
+                    filterSearch(
+                      searchKey,
+                      FilteredProducts,
+                      setFilteredProducts,
+                      AllProducts,
+                      Category
+                    );
+                  }}
+                  checked
+                />
+              ) : (
+                <input
+                  type="radio"
+                  value={category}
+                  className="checkbox mx-2 appearance-none  focus:opacity-100 ring-2  ring-gray-600 focus:ring-4 focus:bg-black focus:ring-offset-2 focus:ring-black focus:outline-black w-2 h-2   outline-black  border-gray-800  cursor-pointer checked:ring-black checked:ring-4 checked:outline-black checked:ring-offset-2 checked:bg-black  "
+                  name="category"
+                  onFocus={() => setCategory(category)}
+                  onClick={() => {
+                    filterSearch(
+                      searchKey,
+                      FilteredProducts,
+                      setFilteredProducts,
+                      AllProducts,
+                      Category
+                    );
+                  }}
+                />
+              )}
+              <label className="text-sm font-semibold">
+                {category?.toUpperCase()}
+              </label>
+            </div>
+          ))
+        )}
+      </span>
+
       <main className="flex flex-wrap gap-10 my-10  justify-center w-full">
         {FilteredProducts.map((product) => {
           return <ProductCard key={product.id} {...product} />;

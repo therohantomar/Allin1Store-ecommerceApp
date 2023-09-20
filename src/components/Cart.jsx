@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux"
 
 function Cart() {
-  const Product=useSelector(store=>store.cart.items)
-
+  const Products=useSelector(store=>store.cart.items)
+  console.log(Products)
 
   return (
     <div>
