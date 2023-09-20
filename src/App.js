@@ -1,11 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Contact from "./components/Contact.jsx";
-import About from "./components/About.jsx";
-import Home from "./components/Home.jsx";
-import Container from "./components/Container.jsx";
-import Signin from "./components/Signin.jsx";
-import Cart from "./components/Cart.jsx";
-import ProductDetail from "./components/ProductDetail.jsx";
+import Contact from "./components/Contact.js";
+import About from "./components/About.js";
+import Home from "./components/Home.js";
+import Container from "./components/Container.js";
+import Signin from "./components/Signin.js";
+import Cart from "./components/Cart.js";
+import ProductDetail from "./components/ProductDetail.js";
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Router = createBrowserRouter([
