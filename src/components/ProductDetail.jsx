@@ -5,32 +5,29 @@ import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import ProductDetailShimmer from "./ProductDetailShimmer";
 import ProductCardShimmer from "./ProductCardShimmer";
-import ProductCard from "./ProductCard";
+
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
+import ProductCardDetails from "./ProductCardDetails";
 
 
 function Product() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const Product = useProduct(id);
+  // destructing object
+
   const { title, price, rating, description, image, category } = Product;
   const AllProduct=useSelector(store=>store.products.Products)
 
 
 
-  // destructing object
   const ProductsByCategory=useMemo(()=>{
       let fileteredProducts=AllProduct.filter((product)=>{
         return product.category===category
       })
       return fileteredProducts
   },[category])
-
-
-
-
-
 
 
   if (Object.keys(Product).length === 0) {
@@ -46,7 +43,7 @@ function Product() {
         <p className="h-40 xl:w-2/3 2xl:w-2/3 lg:w-full md:w-full sm:w-full  font-thin">
           {description}
         </p>
-        <p>{category?.toUpperCase()}</p>
+        <p className="my-8">{category?.toUpperCase()}</p>
         <span>
           <div className="flex w-max gap-20 my-10 items-center">
             {" "}
@@ -72,7 +69,7 @@ function Product() {
           ProductsByCategory?.length===0?(new Array(6).fill(0).map((_,index)=>{
             return (<div key={index}><ProductCardShimmer /></div>)
           })):(ProductsByCategory?.map((Product)=>{
-            return <ProductCard key={Product.id}  {...Product}/>
+            return <ProductCardDetails key={Product.id}  {...Product}/>
           }))
         }
       </span>

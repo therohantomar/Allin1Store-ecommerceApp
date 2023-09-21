@@ -27,7 +27,7 @@ function Home() {
      
 
   return (
-    <div className="flex h-full flex-col justify-around bg-white  items-center  w-full">
+    <div className="flex h-max flex-col justify-around bg-white  items-center  w-full">
       <span className="flex w-3/4 justify-center mt-10">
         <input
           type="text"
@@ -104,7 +104,7 @@ function Home() {
         )}
       </span>
 
-      <main className="flex flex-wrap gap-10 my-10  justify-center w-full">
+      <main className="flex flex-wrap h-max gap-10 my-10  justify-center w-full">
         {FilteredProducts.length!==0?FilteredProducts.map((product) => {
           return   <Link to={`product/${product.id}` } key={product.id}><ProductCard   {...product} /></Link>;
         }):<h1 className="font-bold text-xl uppercase">No Product Found .....</h1>}
