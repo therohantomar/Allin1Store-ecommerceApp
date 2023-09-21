@@ -1,15 +1,13 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BsTrash } from "react-icons/bs";
+import { removeItem } from "../utils/cartSlice";
 
 function Cart() {
   const Products = useSelector((store) => store.cart.items);
-
-  
-
-
+  const dispatch=useDispatch()
 
   return (
-    <div className="flex flex-wrap h-max my-10 justify-around ">
+    <div className="flex flex-wrap  justify-around ">
       <main>
         {Products?.map((product) => {
           return (
@@ -34,7 +32,7 @@ function Cart() {
                     +
                   </button>
                 </span>
-                <button className="px-2 border-2 flex border-black  hover:bg-black items-center h-8  w-max hover:text-white transition-all ">
+                <button onClick={()=>dispatch(removeItem(product))} className="px-2 border-2 flex border-black  hover:bg-black items-center h-8  w-max hover:text-white transition-all ">
                   Remove <BsTrash />
                 </button>
               </span>
