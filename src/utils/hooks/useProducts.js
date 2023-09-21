@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { PRODUCTS_LINKS } from "../constants";
+import { addProducts } from "../poductsSlice";
+
 
 function useProducts(){
+  const dispatch=useDispatch()
+
     const [AllProducts,setAllProducts]=useState([])
     const [FilteredProducts,setFilteredProducts]=useState([])
     const [Categories,setCategories]=useState([])
@@ -17,6 +22,7 @@ function useProducts(){
         const products=await data.json()
         setAllProducts(products)
         setFilteredProducts(products)
+        dispatch(addProducts(products))
       }
     async function getCategories(){
         const data=await fetch(PRODUCTS_LINKS+`/categories`)
@@ -24,6 +30,7 @@ function useProducts(){
         let newCateGories=["All",...Categories]
         setCategories(newCateGories)
     }
+
       return {FilteredProducts, setFilteredProducts, AllProducts, Categories}
 
 }

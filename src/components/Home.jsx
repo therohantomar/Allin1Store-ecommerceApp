@@ -1,17 +1,17 @@
 import { BsSearch } from "react-icons/bs";
-
 import ProductCard from "./ProductCard";
 import useProducts from "../utils/hooks/useProducts";
 import ProductCardShimmer from "./ProductCardShimmer";
-import { useState } from "react";
+import {  useState } from "react";
 import { filterSearch } from "../utils/helper";
+import { Link } from "react-router-dom";
 
 function Home() {
   const { FilteredProducts, setFilteredProducts, AllProducts, Categories } =useProducts();
   const [searchKey, setSearchKey] = useState("");
   const [Category, setCategory] = useState("All");
-
-
+  
+  
 
   //early return
   if (AllProducts.length === 0) {
@@ -24,9 +24,11 @@ function Home() {
     );
   }
 
+     
+
   return (
-    <div className="flex flex-col justify-around bg-white items-center  w-full">
-      <span className="flex mt-10">
+    <div className="flex h-full flex-col justify-around bg-white  items-center  w-full">
+      <span className="flex w-3/4 justify-center mt-10">
         <input
           type="text"
           value={searchKey}
@@ -42,16 +44,16 @@ function Home() {
               );
             }
           }}
-          className="w-96 px-2 outline-none h-8 border-2 rounded-tl-sm rounded-bl-sm"
+          className=" px-2 outline-none focus:border-black transition-all h-10 border-2 sm:w-full md:w-full lg:w-3/5 xl:w-3/5 2xl:w-3/5 rounded-tl-sm rounded-bl-sm"
         />
         <button
           onClick={() =>filterSearch(searchKey,FilteredProducts,setFilteredProducts,AllProducts)}
-          className="p-2 h-8 bg-black"
+          className="p-2 h-10 bg-black"
         >
           <BsSearch className="text-white " />
         </button>
       </span>
-      <span className="flex items-center gap-2">
+      <span className="flex border-2  transition-all focus-within:border-black items-center w-5/6 flex-wrap justify-center my-2 gap-2">
         {" "}
         {Categories.length === 0 ? (
           <h1>loading....</h1>
@@ -103,9 +105,9 @@ function Home() {
       </span>
 
       <main className="flex flex-wrap gap-10 my-10  justify-center w-full">
-        {FilteredProducts.map((product) => {
-          return <ProductCard key={product.id} {...product} />;
-        })}
+        {FilteredProducts.length!==0?FilteredProducts.map((product) => {
+          return   <Link to={`product/${product.id}` } key={product.id}><ProductCard   {...product} /></Link>;
+        }):<h1 className="font-bold text-xl uppercase">No Product Found .....</h1>}
       </main>
     </div>
   );
