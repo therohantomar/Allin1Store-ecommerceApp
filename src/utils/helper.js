@@ -14,14 +14,27 @@ export function filterSearch(
   else{
   if (!Category) {
     if (searchKey.length === 0) {
-      
       setFilteredProducts(AllProducts);
-    
     } else {
-      let filteredProducts = FilteredProducts.filter((Product) => {
-        return Product.title.toLowerCase().includes(searchKey);
-      });
-      setFilteredProducts(filteredProducts);
+      if(Category==="All"){
+        let tempAll=AllProducts
+        let smallCaseSearchKey=searchKey.toLowerCase()
+        let filteredProducts = tempAll.filter((Product) => {
+          return Product.title.toLowerCase().includes(smallCaseSearchKey);
+        });
+        setFilteredProducts(filteredProducts);
+      }
+      else{
+        
+        let smallCaseSearchKey=searchKey.toLowerCase()
+        let filteredProducts = FilteredProducts.filter((Product) => {
+          return Product.title.toLowerCase().includes(smallCaseSearchKey);
+        });
+        setFilteredProducts(filteredProducts);
+
+      }
+      
+      
     }
   } else {
     if (FilteredProducts.length === 0) {
