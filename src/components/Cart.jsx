@@ -1,44 +1,16 @@
-import { useSelector, useDispatch } from "react-redux";
-import { BsTrash } from "react-icons/bs";
-import { removeItem } from "../utils/cartSlice";
+import { useSelector } from "react-redux";
+import ProductCartCard from "./ProductCartCard";
+import CartEmpty from "./cartEmpty";
 
 function Cart() {
   const Products = useSelector((store) => store.cart.items);
-  const dispatch=useDispatch()
-
+  
+if(Products.length===0) return <CartEmpty/>
   return (
-    <div className="flex flex-wrap  justify-around ">
-      <main>
+    <div className="flex flex-wrap mb-32 justify-around ">
+      <main >
         {Products?.map((product) => {
-          return (
-            <div
-              key={product.id}
-              className="flex flex-wrap   h-max p-2 border-2 w-max my-2  items-center gap-8"
-            >
-              <img
-                src={product.image}
-                alt={product?.title}
-                className="w-40 h-32 "
-              />
-              <span className="flex flex-col items-center gap-4 ">
-                <h1 className="w-52">{product.title}</h1>
-                <h2>$ {product.price}</h2>
-                <span className=" flex items-center  text-xl  gap-2">
-                  <button className="hover:bg-black hover:text-white   border border-black px-2  text-xl">
-                    -
-                  </button>
-                  <h3>quantity: {product.quantity}</h3>
-                  <button className="hover:bg-black hover:text-white  border border-black px-2  text-xl">
-                    +
-                  </button>
-                </span>
-                <button onClick={()=>dispatch(removeItem(product))} className="px-2 border-2 flex border-black  hover:bg-black items-center h-8  w-max hover:text-white transition-all ">
-                  Remove <BsTrash />
-                </button>
-              </span>
-
-            </div>
-          );
+          return (<ProductCartCard key={product.id} {...product}/>)
         })}
       </main>
       <span className="my-10">

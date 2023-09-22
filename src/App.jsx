@@ -6,13 +6,13 @@ import Container from "./components/Container.jsx";
 import Signin from "./components/Signin.jsx";
 import Cart from "./components/Cart.jsx";
 import ProductDetail from "./components/ProductDetail.jsx";
-
+import Error from "./components/Error.jsx";
 // eslint-disable-next-line react-refresh/only-export-components
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Container />,
-    errorElement: <h1>error</h1>,
+    errorElement: <Error/>,
     children: [
       { path: "/", element: <Home /> },
       { path: "product/:id", element: <ProductDetail /> },

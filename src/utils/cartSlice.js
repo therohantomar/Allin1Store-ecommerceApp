@@ -15,6 +15,9 @@ const cartSlice = createSlice({
         state.items = [...state.items, item];
       } else {
         state.items.at(Index).quantity += 1;
+        
+        
+
       }
     },
     removeItem:(state,action)=>{
@@ -23,9 +26,21 @@ const cartSlice = createSlice({
       })
       state.items=filteredProducts
 
+    },
+    quantityIncrement:(state,action)=>{
+      const Index=state.items.findIndex((item)=>item.title===action.payload.title)
+      state.items.at(Index).quantity+=1
+
+      
+    },
+    quantityDecrement:(state,action)=>{
+      const Index=state.items.findIndex((item)=>item.title===action.payload.title)
+      state.items.at(Index).quantity<=1?state.items.at(Index).quantity=1:state.items.at(Index).quantity-=1
+
     }
   },
+ 
 });
 
-export const { addItem, removeItem } = cartSlice.actions;
+export const { addItem, removeItem, quantityIncrement, quantityDecrement } = cartSlice.actions;
 export default cartSlice.reducer
