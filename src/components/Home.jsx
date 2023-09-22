@@ -72,7 +72,7 @@ function Home() {
                       Category
                     );
                   }}
-                  checked
+                  defaultChecked
                 />
               ) : (
                 <input
