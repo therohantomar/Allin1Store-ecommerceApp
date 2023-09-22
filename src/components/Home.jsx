@@ -1,7 +1,7 @@
 import { BsSearch } from "react-icons/bs";
-import ProductCard from "./ProductCard";
+import ProductCard from "./subComponents/ProductCard";
 import useProducts from "../utils/hooks/useProducts";
-import ProductCardShimmer from "./ProductCardShimmer";
+import ProductCardShimmer from "./subComponents/ProductCardShimmer";
 import {  useState } from "react";
 import { filterSearch } from "../utils/helper";
 import { Link } from "react-router-dom";
@@ -72,7 +72,7 @@ function Home() {
                       Category
                     );
                   }}
-                  defaultChecked
+                  checked
                 />
               ) : (
                 <input

@@ -1,6 +1,6 @@
 import ProductCard from './ProductCard'
 import { useDispatch } from 'react-redux'
-import { addItem } from '../utils/cartSlice'
+import { addItem } from '../../utils/cartSlice'
 import { Link } from 'react-router-dom'
 const ProductCardDetails = (info) => {
   const dispatch=useDispatch()

@@ -3,12 +3,12 @@ import useProduct from "../utils/hooks/useProduct";
 import { AiFillStar } from "react-icons/ai";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
-import ProductDetailShimmer from "./ProductDetailShimmer";
-import ProductCardShimmer from "./ProductCardShimmer";
+import ProductDetailShimmer from "./subComponents/ProductDetailShimmer";
+import ProductCardShimmer from "./subComponents/ProductCardShimmer";
 
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
-import ProductCardDetails from "./ProductCardDetails";
+import ProductCardDetails from "./subComponents/ProductCardDetails";
 
 
 function Product() {

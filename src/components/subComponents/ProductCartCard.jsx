@@ -2,7 +2,7 @@ import {
   quantityIncrement,
   removeItem,
   quantityDecrement,
-} from "../utils/cartSlice";
+} from "../../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import { BsTrash } from "react-icons/bs";
 

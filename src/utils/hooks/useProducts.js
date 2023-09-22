@@ -18,17 +18,29 @@ function useProducts(){
     },[])
 
     async function getproducts(){
+      try{
         const data=await fetch(PRODUCTS_LINKS)
         const products=await data.json()
         setAllProducts(products)
         setFilteredProducts(products)
         dispatch(addProducts(products))
       }
+      catch{
+        console.error("Something Went Wrong !")
+      }
+
+      }
     async function getCategories(){
+      try{
         const data=await fetch(PRODUCTS_LINKS+`/categories`)
         const Categories=await data.json()
         let newCateGories=["All",...Categories]
         setCategories(newCateGories)
+      }
+      catch{
+        console.error("Somethin Went Wrong !")
+      }
+        
     }
 
       return {FilteredProducts, setFilteredProducts, AllProducts, Categories}

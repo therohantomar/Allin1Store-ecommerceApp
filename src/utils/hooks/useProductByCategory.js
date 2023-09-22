@@ -10,11 +10,15 @@ function useProuctByCategory(category) {
   }, []);
 
   async function getByCategory() {
+    try{
     const data = await fetch(PRODUCTS_LINKS + `/category/${category}`);
 
     const Product = await data.json();
     SetProducts(Product);
-    
+    }
+    catch{
+      console.error("Something Went Wrong !")
+    }
   }
   return Products
 }
