@@ -10,8 +10,6 @@ function Home() {
   const { FilteredProducts, setFilteredProducts, AllProducts, Categories } =useProducts();
   const [searchKey, setSearchKey] = useState("");
   const [Category, setCategory] = useState("All");
-  
-  
 
   //early return
   if (AllProducts.length === 0) {
@@ -23,8 +21,6 @@ function Home() {
       </main>
     );
   }
-
-     
 
   return (
     <div className="flex h-max flex-col justify-around bg-white  items-center  w-full">
@@ -76,7 +72,7 @@ function Home() {
                       Category
                     );
                   }}
-                  checked
+                  defaultChecked
                 />
               ) : (
                 <input

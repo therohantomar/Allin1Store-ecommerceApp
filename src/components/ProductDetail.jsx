@@ -35,7 +35,7 @@ function Product() {
   }
 
   return (
-    <div className="w-full h-max p-2 flex flex-col items-center justify-center">
+    <div className="w-full transition-all h-max p-2 flex flex-col items-center justify-center">
     <main className="flex gap-10 p-4 flex-wrap  h-full items-center w-full justify-center"> 
       <img src={image} alt={title} className="w-96  h-max border-2 p-4" />
       <div className="xl:w-1/2 2xl:w-1/2 lg:w-full md:w-full sm:w-full  h-max">
