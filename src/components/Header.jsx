@@ -22,7 +22,7 @@ function Header() {
         </ul>
         <ul className="mx-2  flex items-center ">
           <li className="mx-2 cursor-pointer">
-          <Link to="signin"><>{user.picture?<img src={user.picture} className="w-5 h-5 border-2 border-black rounded-full" alt={user.name} />:<BiUser className="text-xl  hover:text-gray-400" />}</></Link>  
+          <Link to="signin"><>{user.picture?<img src={user.picture} className="w-6 h-6 border-2 border-black rounded-full" alt={user.name} />:<BiUser className="text-xl  hover:text-gray-400" />}</></Link>  
           </li>
           <li className="mx-2 cursor-pointer">
             <Link to="cart" ><BiCartAlt className="text-2xl hover:text-gray-400"/></Link>
