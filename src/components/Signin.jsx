@@ -1,12 +1,16 @@
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from 'jwt-decode'
-import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import { googleLogout } from "@react-oauth/google";
 function Signin() {
-  const [userInfo,setUserInfo]=useState({})
-  console.log(userInfo)
+  
+  const dispatch=useDispatch()
+  const user=useSelector(store=>store.user.info)
   return (
     <div className="">
+    {Object.keys(user).length===0?
+    
       <div className="flex flex-col items-center justify-center min-h-screen -mt-40 w-full  bg-white">
         <div className="max-w-md  w-full">
           <h1 className="text-3xl font-bold mb-6">Sign In</h1>
@@ -14,8 +18,7 @@ function Signin() {
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               const credentials=jwtDecode(credentialResponse.credential) 
-              setUserInfo(credentials)
-              console.log(credentials)
+              dispatch(addUser(credentials))
 
             }}
             onError={() => {
@@ -25,7 +28,13 @@ function Signin() {
           />
           ;
         </div>
-      </div>
+      </div>:
+      <div>
+      <img src={user.profile} alt={user.name} className="rounded-full w-40 h-40"/>
+        <h1>{user.name}</h1>
+        <button onClick={()=>googleLogout()}>{user.email} logout</button>
+
+      </div>}
     </div>
   );
 }
