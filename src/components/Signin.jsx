@@ -25,10 +25,9 @@ function Signin() {
               }}
               useOneTap
               theme="filled_black"
-  text="continue_with"
-  shape="circle"
+              text="continue_with"
+              shape="circle"
             />
-            
           </div>
         </div>
       ) : (
