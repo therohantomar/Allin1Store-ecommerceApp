@@ -1,11 +1,13 @@
-import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { googleLogout } from "@react-oauth/google";
+import { googleLogout,GoogleLogin } from "@react-oauth/google";
 function Signin() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user.info);
+
+
+
   return (
     <div>
       {Object.keys(user).length === 0 ? (
@@ -21,9 +23,9 @@ function Signin() {
               onError={() => {
                 console.log("Login Failed");
               }}
-              
+              auto_select="false"
             />
-            ;
+            
           </div>
         </div>
       ) : (
