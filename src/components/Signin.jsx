@@ -32,7 +32,7 @@ function Signin() {
             <h1 className="text-xl font-bold my-4">
               Signed in as {user.email}
             </h1>
-            <span className="flex ">
+            <span className="flex  p-2 border-2 rounded-md">
               <img
                 src={user?.picture}
                 alt={user?.name}
