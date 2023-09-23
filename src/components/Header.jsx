@@ -7,11 +7,10 @@ import useLocation from "../utils/hooks/useCurrentLocation";
 function Header() {
   const user=useSelector(store=>store.user.info)
   const {location}=useLocation()
-  
 
   return (
     <header className="w-full  h-max sticky top-0 left-0 right-0 z-20 border-b-2  bg-white flex justify-around ">
-      <span className="font-bold text-lg my-4">@llin1 <h1 className="text-sm text-gray-400 font-thin">{location?.address?.county}</h1> </span>
+      <span className="font-bold text-lg my-4">@llin1 <h1 className="text-sm text-gray-400 font-thin">{location?.address.county?location?.address.county:location?.address.city}</h1> </span>
       <span className="flex">
         <ul className="flex justify-around items-center w-max">
           <li className="mx-4 hover:text-gray-400 font-semibold text-md cursor-pointer ">
