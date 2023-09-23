@@ -23,7 +23,7 @@ function Signin() {
               onError={() => {
                 console.log("Login Failed");
               }}
-              auto_select="false"
+              useOneTap
             />
             
           </div>
