@@ -29,13 +29,16 @@ function Signin() {
           ;
         </div>
       </div>:
-      <div>
-      <img src={user.picture} alt={user.name} className="rounded-full w-40 h-40"/>
+      <div className="min-h-screen flex flex-col items-center justify-center ">
+      <h1>Signed in as {user.email}</h1>
+      <span className="flex ">
+      <img src={user.picture} alt={user.name} className="rounded-full mx-4 w-10 h-10"/>
         <h1>{user.name}</h1>
-        <button onClick={()=>{googleLogout()
+        </span>
+        <button className="border-2 px-6 text-black " onClick={()=>{googleLogout()
         dispatch(removeUser())
         
-        }}>{user.email} logout</button>
+        }}> logout</button>
 
       </div>}
     </div>
