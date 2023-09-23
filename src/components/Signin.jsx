@@ -21,7 +21,7 @@ function Signin() {
               onError={() => {
                 console.log("Login Failed");
               }}
-              useOneTap
+              
             />
             ;
           </div>
