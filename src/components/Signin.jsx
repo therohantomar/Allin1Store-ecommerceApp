@@ -1,7 +1,7 @@
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from 'jwt-decode'
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../utils/userSlice";
+import { addUser, removeUser} from "../utils/userSlice";
 import { googleLogout } from "@react-oauth/google";
 function Signin() {
   
@@ -32,7 +32,10 @@ function Signin() {
       <div>
       <img src={user.picture} alt={user.name} className="rounded-full w-40 h-40"/>
         <h1>{user.name}</h1>
-        <button onClick={()=>googleLogout()}>{user.email} logout</button>
+        <button onClick={()=>{googleLogout()
+        dispatch(removeUser())
+        
+        }}>{user.email} logout</button>
 
       </div>}
     </div>
