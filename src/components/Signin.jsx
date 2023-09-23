@@ -27,26 +27,30 @@ function Signin() {
           </div>
         </div>
       ) : (
-        <div className="min-h-screen flex flex-col gap-4 items-center justify-center ">
-          <h1 className="text-4xl font-bold my-4">Signed in as {user.email}</h1>
-          <span className="flex ">
-            <img
-              src={user.picture}
-              alt={user.name}
-              className="rounded-full  mx-4 w-6 h-6"
-            />
-            <h1 className="text-lg text-gray-500">{user.name}</h1>
-          </span>
-          <button
-            className="border-2 px-10  bg-red-600 hover:bg-red-500  text-white font-bold text-lg "
-            onClick={() => {
-              googleLogout();
-              dispatch(removeUser());
-            }}
-          >
-            {" "}
-            logout
-          </button>
+        <div className="min-h-screen flex flex-col gap-4  justify-center  items-center  ">
+          <div className="flex flex-col gap-8 w-60">
+            <h1 className="text-xl font-bold my-4">
+              Signed in as {user.email}
+            </h1>
+            <span className="flex ">
+              <img
+                src={user?.picture}
+                alt={user?.name}
+                className="rounded-full  mx-4 w-6 h-6"
+              />
+              <h1 className="text-lg text-gray-500">{user?.name}</h1>
+            </span>
+            <button
+              className="border-2 px-10 w-full  bg-red-700 rounded hover:bg-red-500  text-white font-semibold text-xl "
+              onClick={() => {
+                googleLogout();
+                dispatch(removeUser());
+              }}
+            >
+              {" "}
+              logout
+            </button>
+          </div>
         </div>
       )}
     </div>
