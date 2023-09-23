@@ -15,6 +15,7 @@ function Signin() {
             onSuccess={(credentialResponse) => {
               const credentials=jwtDecode(credentialResponse.credential) 
               setUserInfo(credentials)
+              console.log(credentials)
 
             }}
             onError={() => {
