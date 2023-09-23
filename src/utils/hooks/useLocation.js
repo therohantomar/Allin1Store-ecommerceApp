@@ -9,7 +9,6 @@ function useLocation(){
              fetch(`${GEOLOCATION_LINK}&lat=${position.coords.latitude}&lon=${position.coords.longitude}`).then(res=>res.json()).then(data=>{
                 setLocation(data)
              })
-           
     })},[])
 
     return location
