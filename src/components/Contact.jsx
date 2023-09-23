@@ -1,8 +1,8 @@
 
 function Contact() {
   return (
-    <div>
-      contact
+    <div className="min-h-screen bg-white">
+     
     </div>
   )
 }
