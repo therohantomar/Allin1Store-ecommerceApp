@@ -30,7 +30,7 @@ function Signin() {
         </div>
       </div>:
       <div>
-      <img src={user.profile} alt={user.name} className="rounded-full w-40 h-40"/>
+      <img src={user.picture} alt={user.name} className="rounded-full w-40 h-40"/>
         <h1>{user.name}</h1>
         <button onClick={()=>googleLogout()}>{user.email} logout</button>
 
