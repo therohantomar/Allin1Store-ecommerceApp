@@ -1,8 +1,10 @@
 import { BiUser } from "react-icons/bi";
 import { BiCartAlt } from "react-icons/bi";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const user=useSelector(store=>store.user.info)
   return (
     <header className="w-full  h-max sticky top-0 left-0 right-0 z-20 border-b-2  bg-white flex justify-around ">
       <span className="font-bold text-lg my-4">@llin1</span>
@@ -20,7 +22,7 @@ function Header() {
         </ul>
         <ul className="mx-2  flex items-center ">
           <li className="mx-2 cursor-pointer">
-          <Link to="signin"><BiUser className="text-xl  hover:text-gray-400" /></Link>  
+          <Link to="signin"><>{user.picture?<img src={user.picture} className="w-5 h-5 border-2 border-black rounded-full" alt={user.name} />:<BiUser className="text-xl  hover:text-gray-400" />}</></Link>  
           </li>
           <li className="mx-2 cursor-pointer">
             <Link to="cart" ><BiCartAlt className="text-2xl hover:text-gray-400"/></Link>
