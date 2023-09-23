@@ -23,7 +23,10 @@ function Signin() {
               onError={() => {
                 console.log("Login Failed");
               }}
-              useOneTap={true}
+              useOneTap
+              theme="filled_black"
+  text="continue_with"
+  shape="circle"
             />
             
           </div>
