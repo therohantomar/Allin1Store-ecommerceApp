@@ -1,7 +1,10 @@
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from 'jwt-decode'
+import { useState } from "react";
 
 function Signin() {
+  const [userInfo,setUserInfo]=useState({})
+  console.log(userInfo)
   return (
     <div className="">
       <div className="flex flex-col items-center justify-center min-h-screen -mt-40 w-full  bg-white">
@@ -11,7 +14,7 @@ function Signin() {
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               const credentials=jwtDecode(credentialResponse.credential) 
-              console.log(credentials);
+              setUserInfo(credentials)
 
             }}
             onError={() => {
