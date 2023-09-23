@@ -6,7 +6,7 @@ const ProductsInfo = (control) => {
     <div className="p-2 ">
       <div className="container mx-auto p-4">
         <div className="flex items-center border-b-2  gap-10">
-          <h1 className="text-4xl font-bold w-max mb-4">About Products</h1>
+          <h1 className="text-4xl font-bold w-full mb-4">About Products</h1>
           <button
             onClick={() => {
               About === "Products" ? setAbout("Company") : setAbout("Products");
