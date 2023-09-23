@@ -28,17 +28,17 @@ function Signin() {
         </div>
       ) : (
         <div className="min-h-screen flex flex-col gap-4 items-center justify-center ">
-          <h1>Signed in as {user.email}</h1>
+          <h1 className="text-4xl font-bold my-4">Signed in as {user.email}</h1>
           <span className="flex ">
             <img
               src={user.picture}
               alt={user.name}
-              className="rounded-full mx-4 w-6 h-6"
+              className="rounded-full  mx-4 w-6 h-6"
             />
-            <h1>{user.name}</h1>
+            <h1 className="text-lg text-gray-500">{user.name}</h1>
           </span>
           <button
-            className="border-2 px-6 text-black "
+            className="border-2 px-10  bg-red-600 hover:bg-red-500  text-white font-bold text-lg "
             onClick={() => {
               googleLogout();
               dispatch(removeUser());
