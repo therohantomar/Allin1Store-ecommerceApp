@@ -23,7 +23,7 @@ function Home() {
   }
 
   return (
-    <div className="flex h-max flex-col justify-around bg-white  items-center  w-full">
+    <div className="flex h-max flex-col justify-around bg-white text-black items-center  w-full">
       <span className="flex w-3/4 justify-center mt-10">
         <input
           type="text"
@@ -44,7 +44,7 @@ function Home() {
         />
         <button
           onClick={() =>filterSearch(searchKey,FilteredProducts,setFilteredProducts,AllProducts)}
-          className="p-2 h-10 bg-black"
+          className="p-2 h-10 bg-gray-800"
         >
           <BsSearch className="text-white " />
         </button>
@@ -60,7 +60,7 @@ function Home() {
                 <input
                   type="radio"
                   value={category}
-                  className="checkbox mx-2 appearance-none  focus:opacity-100 ring-2  ring-gray-600 focus:ring-4 focus:bg-black focus:ring-offset-2 focus:ring-black focus:outline-black w-2 h-2   outline-black  border-gray-800  cursor-pointer checked:ring-black checked:ring-4 checked:outline-black checked:ring-offset-2 checked:bg-black  "
+                  className="checkbox mx-2 appearance-none  focus:opacity-100 ring-2  ring-gray-600 focus:ring-4 focus:bg-gray-800 focus:ring-offset-2 focus:ring-gray-800 focus:outline-gray-800 w-2 h-2   outline-gray-800  border-gray-800  cursor-pointer checked:ring-gray-800 checked:ring-4 checked:outline-gray-800 checked:ring-offset-2 checked:bg-gray-800  "
                   name="category"
                   onFocus={() => setCategory(category)}
                   onClick={() => {

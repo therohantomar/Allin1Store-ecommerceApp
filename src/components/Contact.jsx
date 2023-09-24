@@ -12,7 +12,7 @@ const [status,setStatus]=useState(null)
 
   return (
     <div className=" flex items-center border-2 justify-center  w-full">
-    <div className="container border-2 mt-2  mb-40 sm:mx-0 md:mx-0 lg:mx-10 xl:mx-96 2xl:96  p-4">
+    <div className="container border-2 w-max  mt-2  mb-40 sm:mx-0 md:mx-0 lg:mx-10 xl:mx-96 2xl:96  p-10 px-20">
       <h1 className="text-3xl font-bold mb-4">Contact Page</h1>
       <form onSubmit={(e)=>handleSubmit(e,status,setStatus,emailjs,formRef)} ref={formRef} className="max-w-md">
         <div className="mb-4">
@@ -67,7 +67,7 @@ const [status,setStatus]=useState(null)
         <input
           type="submit"
           value={"send"}
-          className="bg-black text-white rounded-md px-4 py-2 hover:bg-white hover:text-black transition-colors duration-300"
+          className="bg-black  w-full cursor-pointer text-white rounded-md px-4 py-2 hover:bg-white hover:text-black transition-colors duration-300"
         />
         }
       </form>

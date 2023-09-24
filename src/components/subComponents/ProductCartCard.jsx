@@ -22,21 +22,21 @@ const ProductCartCard = (info) => {
         <span className=" flex items-center self-start  text-xl  gap-2">
           <button
             onClick={() => dispatch(quantityDecrement(info))}
-            className="hover:bg-black hover:text-white   border border-black px-2  text-xl"
+            className="hover:bg-gray-800 hover:text-white   border border-black px-2  text-xl"
           >
             -
           </button>
           <h3>quantity: {quantity}</h3>
           <button
             onClick={() => dispatch(quantityIncrement(info))}
-            className="hover:bg-black hover:text-white  border border-black px-2  text-xl"
+            className="hover:bg-gray-800 hover:text-white  border border-black px-2  text-xl"
           >
             +
           </button>
         </span>
         <button
           onClick={() => dispatch(removeItem(info))}
-          className="px-2 border-2 self-start flex border-black  hover:bg-black items-center h-8  w-max hover:text-white transition-all "
+          className="px-2 border-2 self-start flex border-black  hover:bg-gray-800 items-center h-8  w-max hover:text-white transition-all "
         >
           Remove <BsTrash />
         </button>

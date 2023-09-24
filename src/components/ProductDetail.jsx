@@ -55,7 +55,7 @@ function Product() {
           </div>
           <button
             onClick={() => dispatch(addItem({ id, ...Product }))}
-            className="px-20 text-white bg-black py-1 my-10 transition-all hover:bg-white border-2 hover:border-2 hover:border-black hover:text-black"
+            className="px-20 text-white bg-gray-800 py-1 my-10 transition-all hover:bg-white border-2 hover:border-2 hover:border-black hover:text-black"
           >
             Add to Cart
           </button>

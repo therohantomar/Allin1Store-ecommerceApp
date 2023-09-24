@@ -7,7 +7,7 @@ function Cart() {
   
 if(Products.length===0) return <CartEmpty/>
   return (
-    <div className="flex flex-wrap mb-32 justify-around ">
+    <div className="flex flex-row min-h-screen flex-wrap mb-32 justify-around ">
       <main >
         {Products?.map((product) => {
           return (<ProductCartCard key={product.id} {...product}/>)

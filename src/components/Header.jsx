@@ -9,8 +9,8 @@ function Header() {
   const {location}=useLocation()
 
   return (
-    <header className="w-full  h-max sticky top-0 left-0 right-0 z-20 border-b-2  bg-white flex justify-around ">
-      <span className="font-bold text-lg my-4">@llin1 <h1 className="text-sm text-gray-400 font-thin">{location?.address?.county===undefined?location?.address?.city:location?.address?.county}</h1> </span>
+    <header className="w-full  h-max sticky top-0 left-0 bg-white right-0 z-20 border-b-2  text-gray-800 flex justify-around ">
+      <Link to={"/"}><span className="font-bold text-lg my-4 flex items-center cursor-pointer">@llin1- <h1 className="text-sm text-gray-900 font-thin">{location?.address?.county===undefined?location?.address?.city:location?.address?.county}</h1></span></Link>
       <span className="flex">
         <ul className="flex justify-around items-center w-max">
           <li className="mx-4 hover:text-gray-400 font-semibold text-md cursor-pointer ">
