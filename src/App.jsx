@@ -38,7 +38,7 @@ function App() {
     <>
       <RouterProvider router={Router} />
     </>
-  );
+  )
 }
 
 export default App;

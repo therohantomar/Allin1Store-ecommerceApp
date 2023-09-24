@@ -44,3 +44,17 @@ export function filterSearch(
     }
   }
 }
+
+
+export const handleSubmit = (e,status,setStatus,emailjs,formRef) => {
+  e.preventDefault();
+  setStatus("Wait")
+  // Perform form submission logic here
+  emailjs.sendForm(import.meta.env.VITE_SERVICEID, import.meta.env.VITE_TEMPLATEID, formRef.current, import.meta.env.VITE_PUBLICKEY)
+  .then((result) => {
+        formRef.current.reset()
+        setStatus(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+};

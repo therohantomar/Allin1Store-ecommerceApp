@@ -26,7 +26,6 @@ function Container() {
           <Footer />
         </Provider>
       </GoogleOAuthProvider>
-      ;
     </>
   );
 }
