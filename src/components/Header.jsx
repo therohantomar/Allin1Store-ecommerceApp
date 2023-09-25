@@ -26,21 +26,21 @@ function Header() {
       <span className="flex">
         <ul className="flex justify-around items-center w-max">
           <li
-            className={`mx-4 hover:text-gray-400 ${
+            className={`mx-2 hover:text-gray-400 ${
               params === null ? "border-b-4 border-black" : ""
             } font-semibold text-md cursor-pointer `}
           >
             <Link to="/">Home</Link>
           </li>
           <li
-            className={`mx-4 hover:text-gray-400 ${
+            className={`mx-2 hover:text-gray-400 ${
               params === "about" ? "border-b-4 border-black" : ""
             } font-semibold text-md cursor-pointer `}
           >
             <Link to="about?v=about">About</Link>
           </li>
           <li
-            className={`mx-4 hover:text-gray-400 ${
+            className={`mx-2 hover:text-gray-400 ${
               params === "contact" ? "border-b-4 border-black" : ""
             } font-semibold text-md cursor-pointer `}
           >
@@ -49,7 +49,7 @@ function Header() {
         </ul>
         <ul className="mx-2  flex items-center ">
           <li
-            className={`mx-4 hover:text-gray-400 ${
+            className={`mx-2 hover:text-gray-400 ${
               params === "signin" ? "text-gray-400" : ""
             } font-semibold text-md cursor-pointer `}
           >
@@ -70,7 +70,7 @@ function Header() {
             </Link>
           </li>
           <li
-            className={`mx-4 hover:text-gray-400 ${
+            className={`mx-2 hover:text-gray-400 ${
               params === "cart" ? "text-gray-400" : ""
             } font-semibold text-md cursor-pointer relative `}
           >
