@@ -6,6 +6,7 @@ function Signin() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user.info);
 
+  console.log(user)
 
 
   return (
