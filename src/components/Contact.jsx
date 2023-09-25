@@ -14,9 +14,9 @@ const [status,setStatus]=useState(null)
     <div className="flex items-center w-full flex-wrap  justify-center  ">
     <div className="container  w-max  -mt-40  px-20">
       <h1 className="text-3xl font-bold mb-4">Contact Page</h1>
-      <form onSubmit={(e)=>handleSubmit(e,status,setStatus,emailjs,formRef)} ref={formRef} className="w-max">
-        <div className=" flex sm:flex-col md:flex-col lg:flex-col xl:flex-row 2xl:flex-row flex-wrap gap-2">
-        <div className="mb-4">
+      <form onSubmit={(e)=>handleSubmit(e,status,setStatus,emailjs,formRef)} ref={formRef} className="w-64">
+      
+        <div className="mb-4 ">
           <label htmlFor="name" className="block mb-2 font-bold">
             Name
           </label>
@@ -40,7 +40,7 @@ const [status,setStatus]=useState(null)
             required
           />
         </div>
-        </div>
+        
         <div className="mb-4">
           <label htmlFor="email" className="block mb-2 font-bold">
             Email
