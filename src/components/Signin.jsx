@@ -32,7 +32,7 @@ function Signin() {
         </div>
       ) : (
         <div className="min-h-screen flex flex-col gap-4  justify-center  items-center  ">
-          <div className="flex flex-col gap-8 w-60">
+          <div className="flex flex-col -mt-40 gap-8 w-60">
             <h1 className="text-xl font-bold my-4">
               Signed in as {user.email}
             </h1>
