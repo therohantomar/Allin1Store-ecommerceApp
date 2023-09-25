@@ -2,19 +2,20 @@ import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import { handleSubmit } from "../utils/helper";
 import { Link } from "react-router-dom";
+import Getintouch from "../assets/Images/getintouch.svg"
 
 
 function Contact() {
 const formRef=useRef()
 const [status,setStatus]=useState(null)
 
-  
-
   return (
-    <div className=" flex items-center border-2 justify-center  w-full">
-    <div className="container border-2 w-max  mt-2  mb-40 sm:mx-0 md:mx-0 lg:mx-10 xl:mx-96 2xl:96  p-10 px-20">
+    <div className=" flex items-center min-h-screen border-2 justify-center  w-full">
+    <div className="flex items-center w-full flex-wrap  justify-center  ">
+    <div className="container  w-max  mt-2  px-20">
       <h1 className="text-3xl font-bold mb-4">Contact Page</h1>
-      <form onSubmit={(e)=>handleSubmit(e,status,setStatus,emailjs,formRef)} ref={formRef} className="max-w-md">
+      <form onSubmit={(e)=>handleSubmit(e,status,setStatus,emailjs,formRef)} ref={formRef} className="w-max">
+        <div className=" flex sm:flex-col md:flex-col lg:flex-col xl:flex-row 2xl:flex-row flex-wrap gap-2">
         <div className="mb-4">
           <label htmlFor="name" className="block mb-2 font-bold">
             Name
@@ -38,6 +39,7 @@ const [status,setStatus]=useState(null)
             className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
             required
           />
+        </div>
         </div>
         <div className="mb-4">
           <label htmlFor="email" className="block mb-2 font-bold">
@@ -71,6 +73,9 @@ const [status,setStatus]=useState(null)
         />
         }
       </form>
+    </div>
+    <img src={Getintouch} alt="getin touch"  className="w-96  h-max"/>
+
     </div>
     </div>
   );
