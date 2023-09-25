@@ -4,10 +4,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { googleLogout,GoogleLogin } from "@react-oauth/google";
 function Signin() {
   const dispatch = useDispatch();
-  const user = useSelector((store) => store.user.info);
-
-  console.log(user)
-
+  const user = useSelector((store) => store.user.info)
 
   return (
     <div>
@@ -17,6 +14,7 @@ function Signin() {
             <h1 className="text-3xl font-bold mb-6">Sign In</h1>
             <p className="mb-4">Please sign in using your Google account:</p>
             <GoogleLogin
+              cancel_on_tap_outside
               onSuccess={(credentialResponse) => {
                 const credentials = jwtDecode(credentialResponse.credential);
                 dispatch(addUser(credentials));
