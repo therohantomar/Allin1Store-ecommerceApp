@@ -8,7 +8,7 @@ import Error from "./components/Error.jsx";
 import { lazy, Suspense } from "react";
 
 
-const About=lazy(()=>import("./components/Contact.jsx"))
+const About=lazy(()=>import("./components/About.jsx"))
 const Contact=lazy(()=>import("./components/Contact.jsx"))
 // eslint-disable-next-line react-refresh/only-export-components
 const Router = createBrowserRouter([
