@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import { handleSubmit } from "../utils/helper";
 import { Link } from "react-router-dom";
-import Getintouch from "../assets/Images/getintouch.svg"
+import Getintouch from "../assets/Images/Getintouch.svg"
 
 
 function Contact() {

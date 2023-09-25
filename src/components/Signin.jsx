@@ -4,7 +4,8 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { googleLogout,GoogleLogin } from "@react-oauth/google";
 function Signin() {
   const dispatch = useDispatch();
-  const user = useSelector((store) => store.user.info)
+  const user = useSelector((store) => store.user.info);
+
 
   return (
     <div>
