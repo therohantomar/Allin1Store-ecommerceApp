@@ -15,7 +15,7 @@ const ProductCartCard = (info) => {
       key={id}
       className="flex flex-wrap   h-max p-2 hover:shadow-md w-max my-2  items-center gap-8"
     >
-      <img src={image} alt={title} className="w-40 h-32 " />
+      <img src={image} alt={title} className="w-36 h-32 " />
       <span className="flex flex-col items-center gap-4 ">
         <h1 className="w-72 font-semibold text-lg ">{title}</h1>
         <h2 className="text-gray-500 self-start">$ {price * quantity}</h2>
