@@ -22,7 +22,7 @@ Allin1 is a modern and sleek ecommerce app built using React and Vite. It levera
 - Redux Toolkit: A powerful state management solution for React applications.
 - [Fake Store API](https://fakestoreapi.com/): A free REST API that provides pseudo-real data for ecommerce websites.
 - React Router DOM: A declarative routing library for React applications.
-
+- [React-outh](https://www.npmjs.com/package/@react-oauth/google): Google Authentication for React Applications
 ## 🚀 Getting Started
 
 1. Clone the repository: `git clone <repository-url>`
