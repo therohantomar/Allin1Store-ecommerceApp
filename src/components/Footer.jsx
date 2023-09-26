@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-white text-gray-800 w-full h-max border-t-2  flex flex-col">
+    <footer className="bg-white text-gray-800 w-full h-max border-t-2 font-ubuntu  flex flex-col">
       <span className="h-max p-4 flex flex-wrap border-b-2  mb-4  gap-20">
         <span className="flex flex-col mx-2   ">
           <h1 className="font-bold text-xl ">SITE LINKS</h1>

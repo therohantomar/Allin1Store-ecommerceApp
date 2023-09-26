@@ -10,7 +10,7 @@ const formRef=useRef()
 const [status,setStatus]=useState(null)
 
   return (
-    <div className=" flex items-center min-h-screen border-2 justify-center  w-full">
+    <div className=" flex items-center font-ubuntu min-h-screen border-2 justify-center  w-full">
     <div className="flex items-center w-full flex-wrap  justify-center  ">
     <div className="container  w-max  -mt-10  px-20">
       <h1 className="text-3xl font-bold mb-4">Contact Page</h1>

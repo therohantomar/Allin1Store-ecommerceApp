@@ -3,10 +3,10 @@ const ProductsInfo = (control) => {
   const { About, setAbout } = control;
 
   return (
-    <div className="p-2 ">
+    <div className="p-2  font-martian">
       <div className="container mx-auto p-4">
         <div className="flex items-center border-b-2  gap-10">
-          <h1 className="text-4xl font-bold w-full mb-4">About Products</h1>
+          <h1 className="text-4xl font-bold font-ubuntu w-full mb-4">About Products</h1>
           <button
             onClick={() => {
               About === "Products" ? setAbout("Company") : setAbout("Products");
@@ -22,7 +22,7 @@ const ProductsInfo = (control) => {
         {About === "Products" ? (
           <>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold mb-2">About Us</h2>
+              <h2 className="text-2xl font-ubuntu font-bold mb-2">About Us</h2>
               <p className="text-lg">
                 Allin1Store is your one-stop shop for a wide range of products.
                 We are committed to providing quality products and excellent
@@ -31,7 +31,7 @@ const ProductsInfo = (control) => {
             </div>
 
             <div className="mb-6">
-              <h2 className="text-2xl font-bold mb-2">Product Categories</h2>
+              <h2 className="text-2xl font-ubuntu font-bold mb-2">Product Categories</h2>
               <ul className="grid grid-cols-2 gap-4">
                 <li className="text-lg border border-gray-300 rounded p-4">
                   <h3 className="text-xl font-bold mb-2">Electronics</h3>
@@ -81,7 +81,7 @@ const ProductsInfo = (control) => {
             </div>
 
             <div className="mb-6">
-              <h2 className="text-2xl font-bold mb-2">Why Choose Us?</h2>
+              <h2 className="text-2xl font-ubuntu font-bold mb-2">Why Choose Us?</h2>
               <ul className="list-disc list-inside">
                 <li className="text-lg">
                   Wide Selection: We offer a vast range of products across

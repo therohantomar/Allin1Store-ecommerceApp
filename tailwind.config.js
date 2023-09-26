@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+          "martian":['Martian'],
+          "ubuntu":['Ubuntu'],
+          "nunito":['Nunito']
+
+      },
+    },
   },
   plugins: [],
 }

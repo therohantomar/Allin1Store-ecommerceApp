@@ -4,7 +4,7 @@ import {BsCartFill} from "react-icons/bs"
 
 const CartEmpty = () => {
   return (
-    <div className="w-full mb-40">
+    <div className="w-full font-ubuntu mb-40">
     <span className="flex flex-col justify-center items-center mt-32">
       <BiCartDownload className=" text-8xl text-gray-500 mt-20 "  />
       <h1 className="text-2xl text-gray-500 font-bold">Try filling it</h1>

@@ -9,7 +9,7 @@ function Cart() {
   console.log(total)
 if(Products.length===0) return <CartEmpty/>
   return (
-  <div className="flex flex-row min-h-screen flex-wrap -mt-42 justify-around ">
+  <div className="flex flex-row min-h-screen font-ubuntu flex-wrap -mt-42 justify-around ">
       <main >
         {Products?.map((product) => {
           return (<ProductCartCard key={product.id} {...product}/>)
@@ -19,7 +19,7 @@ if(Products.length===0) return <CartEmpty/>
         <h1>Total Items- {Products.length}</h1>
         
 
-        <button className="px-4 border-2 hover:bg-black hover:text-white ">Checkout</button>
+        <button className="px-4 border-2  hover:bg-black hover:text-white ">Checkout</button>
       </span>
 
     </div>

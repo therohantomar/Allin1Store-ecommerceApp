@@ -12,10 +12,10 @@ function Header() {
   const { location } = useLocation();
   const params = searchParams.get("v");
   return (
-    <header className="w-full  h-max sticky top-0 left-0 bg-white transition-all py-4 right-0 z-20 border-b-2  text-gray-800 flex justify-around ">
+    <header className="w-full font-ubuntu  h-max sticky top-0 left-0 bg-white transition-all py-4 right-0 z-20 border-b-2  text-gray-800 flex justify-around ">
       <Link to={"/"}>
-        <span className="font-bold text-lg  flex flex-col  items-center cursor-pointer">
-          <img src={logo} alt="logo" className="w-20 h-max" />
+        <span  className="font-bold  text-lg  flex flex-col  items-center cursor-pointer">
+          <img  src={logo} alt="logo" className="w-20 h-max" />
           <h1 className="text-sm text-gray-900 font-thin">
             {location?.address?.county === undefined
               ? location?.address?.city

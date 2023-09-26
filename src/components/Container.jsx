@@ -16,7 +16,7 @@ function Container() {
     <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENTID}>
         {online === false ? (
           <div className="w-full h-8 transition-all delay-200  bg-gray-500  flex items-center justify-center font-bold  text-white">
-            <p className="animate-pulse mx-2 "> OFFLINE</p>
+            <p className="animate-pulse font-ubuntu mx-2 "> OFFLINE</p>
             <FiWifiOff />
           </div>
         ) : null}

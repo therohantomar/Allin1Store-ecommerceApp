@@ -6,7 +6,7 @@ const Error = () => {
 
   
   return (
-    <div className="flex flex-col items-center  justify-center w-full h-full ">
+    <div className="flex font-ubuntu flex-col items-center  justify-center w-full h-full ">
       <span className="flex flex-col items-center mt-32">
         <img src={error} alt="error" />
         <h1>{err?.statusText}</h1>
