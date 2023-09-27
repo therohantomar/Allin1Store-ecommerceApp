@@ -49,7 +49,7 @@ function Home() {
           <BsSearch className="text-white " />
         </button>
       </span>
-      <span className="flex border-2  transition-all focus-within:border-black items-center w-5/6 flex-wrap justify-center my-2 gap-2">
+      <span className="flex border-2  font-ubuntu transition-all focus-within:border-black items-center w-5/6 flex-wrap justify-center my-2 gap-2">
         {" "}
         {Categories.length === 0 ? (
           <h1>loading....</h1>

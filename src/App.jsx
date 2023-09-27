@@ -6,23 +6,39 @@ import Cart from "./components/Cart.jsx";
 import ProductDetail from "./components/ProductDetail.jsx";
 import Error from "./components/Error.jsx";
 import { lazy, Suspense } from "react";
+import Cancel from "./components/Cancel.jsx";
+import Success from "./components/Success.jsx"
 
-const About=lazy(()=>import("./components/About.jsx"))
-const Contact=lazy(()=>import("./components/Contact.jsx"))
+const About = lazy(() => import("./components/About.jsx"));
+const Contact = lazy(() => import("./components/Contact.jsx"));
 // eslint-disable-next-line react-refresh/only-export-components
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Container />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
       { path: "product/:id", element: <ProductDetail /> },
-      { path: "about", element:<Suspense fallback={()=><h1>loading....</h1>} ><About /></Suspense> },
+      {
+        path: "about",
+        element: (
+          <Suspense fallback={() => <h1>loading....</h1>}>
+            <About />
+          </Suspense>
+        ),
+      },
       {
         path: "contact",
-        element:<Suspense fallback={()=><h1>loading....</h1>} ><Contact /></Suspense>  ,
+        element: (
+          <Suspense fallback={() => <h1>loading....</h1>}>
+            <Contact />
+          </Suspense>
+        ),
       },
+      { path: "cancel", element: <Cancel /> },
+      { path: "success", element: <Success /> },
+
       {
         path: "signin",
         element: <Signin />,
@@ -40,7 +56,7 @@ function App() {
     <>
       <RouterProvider router={Router} />
     </>
-  )
+  );
 }
 
 export default App;
