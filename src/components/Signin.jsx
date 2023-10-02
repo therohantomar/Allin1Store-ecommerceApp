@@ -2,9 +2,11 @@ import jwtDecode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { googleLogout,GoogleLogin } from "@react-oauth/google";
+import useScrollToTop from "../utils/hooks/useScrollToTop";
 function Signin() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user.info);
+  useScrollToTop()
 
 
   return (

@@ -1,6 +1,7 @@
 
 
 const ProductDetailShimmer = () => {
+  
   return (
     <div className="flex gap-10 p-4 flex-wrap  h-full items-center w-full justify-center">
       <div  className="w-96  h-96 border-2 bg-gray-300 animate-pulse " ></div>

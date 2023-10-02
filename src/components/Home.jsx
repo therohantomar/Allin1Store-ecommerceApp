@@ -5,11 +5,12 @@ import ProductCardShimmer from "./subComponents/ProductCardShimmer";
 import {  useState } from "react";
 import { filterSearch } from "../utils/helper";
 import { Link } from "react-router-dom";
-
+import useScrollToTop from "../utils/hooks/useScrollToTop"
 function Home() {
   const { FilteredProducts, setFilteredProducts, AllProducts, Categories } =useProducts();
   const [searchKey, setSearchKey] = useState("");
   const [Category, setCategory] = useState("All");
+  useScrollToTop()
 
   //early return
   if (AllProducts.length === 0) {

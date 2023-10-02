@@ -9,12 +9,14 @@ import ProductCardShimmer from "./subComponents/ProductCardShimmer";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
 import ProductCardDetails from "./subComponents/ProductCardDetails";
+import useScrollToTop from "../utils/hooks/useScrollToTop";
 
 
 function Product() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const Product = useProduct(id);
+  useScrollToTop()
   // destructing object
 
   const { title, price, rating, description, image, category } = Product;
