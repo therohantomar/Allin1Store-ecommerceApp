@@ -3,7 +3,6 @@ import { useEffect } from "react";
 function useScrollToTop(){
     useEffect(() => {
         let isScrolling = true;
-      
         const scrollToTop = () => {
           if (!isScrolling) return;
           window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
