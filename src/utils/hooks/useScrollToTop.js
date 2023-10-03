@@ -5,7 +5,7 @@ function useScrollToTop(){
         let isScrolling = true;
         const scrollToTop = () => {
           if (!isScrolling) return;
-          window.scrollTo({ top: 0, left: 0 });
+          window.scrollTo({ top: 0, left: 0});
           if (window.scrollY > 0) {
             window.requestAnimationFrame(scrollToTop);
           }
