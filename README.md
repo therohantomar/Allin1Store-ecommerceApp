@@ -1,4 +1,8 @@
+
+
 # 🛍️ Allin1 Ecommerce App
+
+![allin1store Screenshot](https://res.cloudinary.com/rohanss/image/upload/v1696516779/Screenshot_20231005_200910_fqboze.png)
 
 🚀 Welcome to Allin1, your ultimate ecommerce app! 
 
