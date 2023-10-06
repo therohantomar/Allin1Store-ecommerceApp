@@ -23,6 +23,7 @@ const [status,setStatus]=useState(null)
           <input
             type="text"
             id="name"
+            name="name"
             className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
             required
           />
@@ -35,6 +36,7 @@ const [status,setStatus]=useState(null)
             type="tel"
             id="phoneNumber"
             pattern="[0-9]{1,12}"
+            name="phone"
             maxLength="12"
             className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
             required
@@ -48,7 +50,7 @@ const [status,setStatus]=useState(null)
           <input
             type="email"
             id="email"
-
+            name="email"
             className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
             required
           />
@@ -60,12 +62,13 @@ const [status,setStatus]=useState(null)
           <textarea
             id="message"
             className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+            name="message"
             required
           />
         </div>
-        {status==="OK"?<Span className="flex items-center"><h1 className="text-gray-500 font-semibold">Thank Your For Your Feedback :) </h1>
-          <h1><Link to={"/"} >Continue Shopping</Link></h1>
-        </Span>:
+        {status!=="OK"?<span className="flex flex-col items-center"><h1 className="text-gray-500 font-semibold">Thank You For Your Feedback :) </h1>
+          <h1 className="p-2 border-2 rounded-md bg-black text-white font-ubuntu font-bold"><Link to={"/"} >shOp now !</Link></h1>
+        </span>:
         <input
           type="submit"
           value={"send"}
