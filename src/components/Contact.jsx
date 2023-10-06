@@ -66,7 +66,7 @@ const [status,setStatus]=useState(null)
             required
           />
         </div>
-        {status!=="OK"?<span className="flex flex-col items-center"><h1 className="text-gray-500 font-semibold">Thank You For Your Feedback :) </h1>
+        {status==="OK"?<span className="flex flex-col items-center"><h1 className="text-gray-500 font-semibold">Thank You For Your Feedback :) </h1>
           <h1 className="p-2 border-2 rounded-md bg-black text-white font-ubuntu font-bold"><Link to={"/"} >shOp now !</Link></h1>
         </span>:
         <input
